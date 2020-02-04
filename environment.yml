@@ -1,0 +1,21 @@
+name: speed_env
+channels:
+- jjhelmus
+- marufr
+- defaults
+- conda-forge
+dependencies:
+- python=2
+- cython
+- jupyter
+- numpy
+- scipy
+- pandas
+- matplotlib
+- glpk
+- pip
+- pyomo
+- pyaml
+- pip:
+  - cufflinks
+  - Pyro
