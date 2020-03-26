@@ -170,12 +170,8 @@ def get_vehicles(instance):
 
 
 
-def create_look_up_dictionary():
-    days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
-    time_windows = [[0,3],[4,7],[8,11],[12,15],[16,19],[20,23]]
-    max_rides = [15,20,25]
-    head_ways = [10,15,20]
-    dwell_reductions =[0.8,1.0,1.2]
+def create_look_up_dictionary(days,time_windows,max_rides,head_ways,demand_std_dev,num_routes):
+
     look_up_dictionary ={}
     for day in days:
         look_up_dictionary[day] = {}
@@ -188,30 +184,29 @@ def create_look_up_dictionary():
                 for head_way in head_ways:
                     hw = 'hw=' + str(head_way)
                     look_up_dictionary[day][tw][mr][hw] ={}
-                    for dwell_reduction in dwell_reductions:
-                        dr = 'dr=' + str(dwell_reduction)
-                        look_up_dictionary[day][tw][mr][hw][dr] ={}
+                    for std_dev in demand_std_dev:
+                        sd = 'sd=' + str(std_dev)
+                        look_up_dictionary[day][tw][mr][hw][sd] ={}
+                        for num in num_routes:
+                            routes = '_routes=' + str(num)
+                            look_up_dictionary[day][tw][mr][hw][sd][routes] ={}
 
     return look_up_dictionary
 
 
 
-def create_case_list(days,time_windows,max_rides,head_ways,dwell_reductions):
-#     days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
-#     time_windows = [[0,3],[4,7],[8,11],[12,15],[16,19],[20,23]]
-#     max_rides = [15,18,25]
-#     head_ways = [10,15,20]
-#     dwell_reductions =[0.8,1.0,1.2]
+def create_case_list(days,time_windows,max_rides,head_ways,demand_std_dev,num_routes):
+
     case_list = []
-    solution_dict ={}
+                        
     for day in days:
         for time_window in time_windows:
             for max_ride in max_rides:
                 for head_way in head_ways:
-                    for dwell_reduction in dwell_reductions:
-                        file_name = str(day) + '_tw=' + str(time_window) + '_mr=' + str(max_ride) + '_hw=' + str(head_way) + '_dr=' + str(dwell_reduction)
-                        case_list.append(file_name)
-                        
+                    for std_dev in demand_std_dev:
+                        for num in num_routes:
+                            file_name = str(day) + '_tw=' + str(time_window) + '_mr=' + str(max_ride) + '_hw=' + str(head_way) + '_sd=' + str(std_dev) + '_routes=' + str(num)                        
+                            case_list.append(file_name)
     return case_list
 
 def partition_route(route):

@@ -1,0 +1,6 @@
+/Users/dsigler/ATHENA-bus/VR_data/Monday_tw=[0, 7]_mr=15_hw=5_sd=0_routes=1_Scenario.dat
+/Users/dsigler/ATHENA-bus/VR_data/Monday_tw=[0, 7]_mr=15_hw=5_sd=0_routes=2_Scenario.dat
+/Users/dsigler/ATHENA-bus/VR_data/Monday_tw=[0, 7]_mr=15_hw=5_sd=0_routes=3_Scenario.dat
+/Users/dsigler/ATHENA-bus/VR_data/Monday_tw=[0, 7]_mr=15_hw=5_sd=0_routes=4_Scenario.dat
+/Users/dsigler/ATHENA-bus/VR_data/Monday_tw=[0, 7]_mr=15_hw=5_sd=0_routes=5_Scenario.dat
+/Users/dsigler/ATHENA-bus/VR_data/Monday_tw=[0, 7]_mr=15_hw=5_sd=1_routes=1_Scenario.dat
