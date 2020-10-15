@@ -1,0 +1,22 @@
+name: bus-optimization
+channels:
+- jjhelmus
+- marufr
+- defaults
+- conda-forge
+dependencies:
+- python
+- cython
+- jupyter
+- numpy
+- scipy
+- pandas
+- matplotlib
+- glpk
+- pip
+- pyomo
+- pyaml
+- cloudpickle 
+- pip:
+  - cufflinks
+  - pytest
